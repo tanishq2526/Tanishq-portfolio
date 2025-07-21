@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.theme-button {
+  padding: 10px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-button img, .theme-button svg {
+  vertical-align: middle;
+}
+
+.theme-button:hover {
+  opacity: 0.8;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar .btn,
+.navbar-links button {
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.navbar .btn {
+  position: relative;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 10px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-accent);
+  color: var(--color-contrast-text);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  background-color: var(--color-secondary);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--color-accent);
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+  .NavBar ul {
+    display: none;
+  }
+  .navbar-links {
+    display: none;
+  }
+
+.theme-button {
+    background-color: transparent;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: var(--color-accent) solid 1px;
+  background-color: var(--color-bg);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  margin: 3px 0;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--color-accent);
+  padding: 10px 0;
+  z-index: 1001;
+}
+
+.hamburger:hover .menu,
+.hamburger:focus-within .menu {
+  display: flex;
+}
+
+

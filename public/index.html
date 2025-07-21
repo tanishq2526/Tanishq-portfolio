@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<link rel="icon" href="/images/alien-icon1.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="/myportfolio/src/images/alien-icon.jpg" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Tanishq Soni</title>
+  </head>
+  <style>
+ .bg {
+    /* For light theme, use a lighter background color */
+    /* background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat; */
+    background-color: var(--color-bg); /* Light/off-white background */
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+
+.bg:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg); /* Use white instead of black for overlay */
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.2; /* Slightly less opacity for lighter feel */
+}
+
+@keyframes sf-fly-by-1 {
+    from {
+        transform: translateZ(-600px);
+        opacity: 0.3; /* Reduced opacity for lighter theme */
+    }
+    to {
+        transform: translateZ(0);
+        opacity: 0.3;
+    }
+}
+
+@keyframes sf-fly-by-2 {
+    from {
+        transform: translateZ(-1200px);
+        opacity: 0.3;
+    }
+    to {
+        transform: translateZ(-600px);
+        opacity: 0.3;
+    }
+}
+
+@keyframes sf-fly-by-3 {
+    from {
+        transform: translateZ(-1800px);
+        opacity: 0.3;
+    }
+    to {
+        transform: translateZ(-1200px);
+        opacity: 0.3;
+    }
+}
+
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+    -webkit-perspective: 600px;
+    z-index: -1;
+}
+
+/* Star colors changed to medium and light gray tones for a softer look in light theme */
+.star-field .layer {
+    box-shadow: 
+        -411px -476px #999999, 777px -407px #a6a6a6, -387px -477px #bfbfbf, -91px -235px #a6a6a6,
+        491px -460px #cccccc, 892px -128px #cccccc, 758px -277px #d6d6d6, 596px 378px #999999,
+        647px 423px #e6e6e6, 183px 389px #b3b3b3, 524px -237px #e0e0e0, 679px -535px #c7c7c7,
+        158px 399px #d6d6d6, 157px 249px #d6d6d6, 81px -450px #d1d1d1, 719px -360px #a3a3a3,
+        -499px 473px #d9d9d9, -158px -349px #a6a6a6, 870px -134px #bcbcbc, 446px 404px #a3a3a3,
+        440px 490px #a6a6a6, 414px 507px #c9c9c9, -12px 246px #f5f5f5, -384px 369px #c7c7c7,
+        641px -413px #f5f5f5, 822px 516px #bfbfbf, 449px 132px #a3a3a3, 727px 146px #cccccc,
+        -315px -488px #c9c9c9, 952px -70px #c7c7c7, -869px -29px #bfbfbf, 502px 80px #d1d1d1,
+        764px 342px #d4d4d4, -150px -380px #bfbfbf, 654px -426px #c7c7c7, -325px -263px #a3a3a3,
+        755px -447px #b3b3b3, 729px -177px #a3a3a3, -682px -391px #c9c9c9, 554px -176px #d6d6d6,
+        -85px -428px #b8b8b8, 714px 55px #d9d9d9, 359px -285px #bcbcbc, -362px -508px #d1d1d1,
+        468px -265px #f5f5f5, 74px -500px #b3b3b3, -514px 383px #bfbfbf, 730px -92px #bcbcbc,
+        -112px 287px #b6b6b6, -853px 79px #c3c3c3, 828px 475px #c3c3c3, -681px 13px #fcfcfc,
+        -176px 209px #e0e0e0, 758px 457px #fcfcfc, -383px -454px #d6d6d6, 813px 179px #c8c8c8,
+        608px 98px #f5f5f5, -860px -65px #bababa, -572px 272px #cccccc, 459px 533px #f5f5f5,
+        624px -481px #c9c9c9, 790px 477px #d1d1d1, 731px -403px #d6d6d6, 70px -534px #999999,
+        -23px 510px #bcbcbc, -652px -237px #f5f5f5, -690px 367px #c8c8c8, 810px 536px #c8c8c8,
+        774px 293px #b6b6b6, -362px 97px #a3a3a3, 563px 47px #d1d1d1, 313px 475px #d4d4d4,
+        839px -491px #c7c7c7, -217px 377px #a6a6a6, -581px 239px #a3a3a3, -857px 72px #999999,
+        -23px 340px #d1d1d1, -837px 246px #fff, 170px -502px #bcbcbc, 822px -443px #d4d4d4,
+        795px 497px #d4d4d4, -814px -337px #bcbcbc, 206px -339px #ebebeb, -779px 108px #c9c9c9,
+        808px 2px #a6a6a6, 665px 41px #a6a6a6, -564px 64px #999999, -380px 74px #bcbcbc,
+        -369px -60px #cccccc, 47px -495px #c7c7c7, -383px 368px #cccccc, 419px 288px #c8c8c8,
+        -598px -50px #a3a3a3, -833px 187px #bababa, 378px 325px #f5f5f5, -703px 375px #c3c3c3,
+        392px 520px #b8b8b8, -492px -60px #bababa, 759px 288px #e0e0e0, 98px -412px #bababa,
+        -911px -277px #b6b6b6;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+}
+
+.star-field .layer:nth-child(1) {
+    animation: sf-fly-by-1 5s linear infinite;
+}
+
+.star-field .layer:nth-child(2) {
+    animation: sf-fly-by-2 5s linear infinite;
+}
+
+.star-field .layer:nth-child(3) {
+    animation: sf-fly-by-3 5s linear infinite;
+}
+
+  </style>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div class="bg"></div>
+
+<div class="star-field">
+<div class="layer"></div>
+<div class="layer"></div>
+<div class="layer"></div>
+  </body>
+</html>

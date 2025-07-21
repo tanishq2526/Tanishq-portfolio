@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    /* Light theme */
+    --color-bg: #ffffff;        /* Off-white background */
+    --color-text: #16161A;      /* Deep black text */
+    --color-accent: #dfba00;    /* Vibrant yellow for CTAs, highlights */
+    --color-brand: #7B1FA2;     /* Primary purple accent */
+    --color-secondary: #6C63FF; /* Optional: softer purple-blue for gradients */
+    --color-border: #8c8c8c;    /* Subtle border or divider */
+    --color-shadow: #805390;
+}
+
+.dark-mode {
+    --color-bg: #0B0B0E;        /* Near-black background */
+    --color-text: #9a9a98;      /* Off-white text */
+    --color-accent: #FFD600;    /* Yellow stays for vibrancy */
+    --color-brand: #964eb5;     /* Softened lavender/lilac purple */
+    --color-secondary: #4F378B; /* Deeper purple for visual depth */
+    --color-border: #232027;    /* Slightly lighter for separation */
+    --color-shadow: #d45cffa0;
+    --color-contrast-text: #16161A; /* Contrast text for readability */
+}
+
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text );
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+p,li,span{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar {
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+  opacity: 0.8;
+}
+
+.highlight-text {
+  color: var(--color-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.heading {
+    font-size: 5rem;
+    color: var(--color-heading);
+    margin-bottom: 3rem;
+    -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .navbar {
+        text-align: center;
+        padding: 10px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem; 
+        margin-top: 10px;
+    }
+
+    .highlight-text {
+        font-size: 1.5rem;
+    }
+
+    span {
+        font-size: 1rem;
+    }
+}
