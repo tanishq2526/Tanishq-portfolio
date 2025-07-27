@@ -1,54 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/HeroSection.css';
 
+
 const HeroSection = () => {
     const [text, setText] = useState('');
     const [index, setIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [deleting, setDeleting] = useState(false);
 
+    
+   useEffect(() => {
     const texts = [
         "a web developer",
         "Full stack developer",
         "build things for web"
     ];
 
-    useEffect(() => {
-        const currentText = texts[index];
-        let speed = deleting ? 100 : 150;
+    const currentText = texts[index];
+    let speed = deleting ? 100 : 150;
 
-        const timeout = setTimeout(() => {
-            if (!deleting) {
-                setText(currentText.substring(0, charIndex + 1));
-                setCharIndex(charIndex + 1);
+    const timeout = setTimeout(() => {
+        if (!deleting) {
+            setText(currentText.substring(0, charIndex + 1));
+            setCharIndex(charIndex + 1);
 
-                if (charIndex + 1 === currentText.length) {
-                    setTimeout(() => {
-                        setDeleting(true);
-                    }, 1000);
-                }
-            } else {
-                setText(currentText.substring(0, charIndex - 1));
-                setCharIndex(charIndex - 1);
-
-                if (charIndex - 1 === 0) {
-                    setDeleting(false);
-                    setIndex((index + 1) % texts.length);
-                }
+            if (charIndex + 1 === currentText.length) {
+                setTimeout(() => {
+                    setDeleting(true);
+                }, 1000);
             }
-        }, speed);
+        } else {
+            setText(currentText.substring(0, charIndex - 1));
+            setCharIndex(charIndex - 1);
 
-        return () => clearTimeout(timeout);
-    }, [charIndex, deleting, index, texts]);
+            if (charIndex - 1 === 0) {
+                setDeleting(false);
+                setIndex((index + 1) % texts.length);
+            }
+        }
+    }, speed);
 
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/myResume.pdf';
-        link.download = 'Tanishq_Soni_Resume.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+    return () => clearTimeout(timeout);
+}, [charIndex, deleting, index]);
+
+
+    const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/myResume.pdf';
+    link.download = 'Tanishq_Soni_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+
 
     return (
         <div className="hero-section">
@@ -61,12 +65,15 @@ const HeroSection = () => {
                 <p>I'm a passionate web developer with a knack for creating dynamic and responsive web applications. I love turning ideas into reality through code.</p>
                 
                 <div className="social-medias">
-                    <button className="cta-button" onClick={handleDownload}>
-                        <svg id='resume-btn' xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
-                            <path d="M6 2C4.91 2 4 2.91 4 4v16c0 1.09 0.91 2 2 2h12c1.09 0 2-0.91 2-2V8l-6-6H6zM6 4h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h8v-2H8z"></path>
-                        </svg>
-                        <span className="tooltip">RESUME</span>
-                    </button>
+                    <a className="cta-button" href="/myResume.pdf" onClick={(e) => {
+                        e.preventDefault();
+                        downloadResume();
+                    }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                    <path d="M6 2C4.91 2 4 2.91 4 4v16c0 1.09 0.91 2 2 2h12c1.09 0 2-0.91 2-2V8l-6-6H6zM6 4h7v5h5v11H6V4zm2 8v2h8v-2H8zm0 4v2h8v-2H8z"></path>
+                      </svg>
+                     <span className="tooltip">RESUME</span>
+                    </a>
 
                     <a className="cta-button" href="https://www.instagram.com/oye.tanishq" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
@@ -89,6 +96,7 @@ const HeroSection = () => {
                         <span className="tooltip">GITHUB</span>
                     </a>
                 </div>
+                
             </div>
         </div>
     );

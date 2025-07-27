@@ -6,7 +6,7 @@ const About = () => {
             <div className="intro">
                 <h2 className="heading">/about me-</h2>
                 <p>
-                    Hey there! I'm <span className="highlight-text">Tanishq Soni</span> — a self taught developer with a curious mind and a keyboard that's been through countless lines of trial, error, and breakthroughs. My journey started with a simple goal: build a Discord bot for fun. But that little experiment unlocked a world I couldn't look away from. Since then, I've been diving deep into full-stack web development, backend systems, and everything in between.</p>
+                    Hello! I'm <span className='highlight-text'>Tanishq Soni</span> — a self-taught developer with a deep curiosity for technology and a relentless drive to build meaningful digital experiences. What began as a fascination with how things work soon evolved into a passion for full-stack web development, backend systems, and scalable architecture. I thrive on turning complex problems into elegant, functional solutions — and I'm always exploring new tools, technologies, and ideas to push my craft forward</p>
             </div>
             <code><div className="technologies">
     <h2>/ Technologies I Use </h2>

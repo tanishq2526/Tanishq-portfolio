@@ -1,10 +1,10 @@
 
-// import './App.css';
+import './App.css';
 import Navbar from './component/Navbar';
 import HeroSection from './component/HeroSection';
 import Projects from './component/Projects';
 import About from './component/About';
-import Contact from './component/Contact';
+import SocialLinks from './component/footersocial';
 
 function App() {
   return (
@@ -13,8 +13,7 @@ function App() {
       <HeroSection />
       <About />
       <Projects />
-      <Contact />
-      
+      <SocialLinks />      
     </div>
   );
 }
