@@ -8,6 +8,8 @@ const port = 5000;
 app.use(cors());
 
 app.use(express.json());
+// tanishq:tanishqsoni
+// mongoose.connect('mongodb+srv://tanishq:tanishqsoni@cluster0.rch2cyk.mongodb.net/portfolio?retryWrites=true&w=majority&appName=Cluster0')
 
 mongoose.connect('mongodb+srv://tanishq:tanishqsoni@cluster0.rch2cyk.mongodb.net/portfolio?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
