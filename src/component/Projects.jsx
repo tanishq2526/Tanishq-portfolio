@@ -12,7 +12,7 @@ const Projects = () => {
         window.open("https://github.com/tanishq2526/Todo-App", "_blank");
     };
     const handleWeatherClick = () => {
-        window.open("https://github.com/tanishq2526/Weather-App", "_blank");
+        window.open("https://github.com/tanishq2526/weather-analyse", "_blank");
     };
 
     return (
