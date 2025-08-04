@@ -35,7 +35,7 @@ const getIsNight = () => {
             <button className="btn" onClick={() => window.scrollTo(0, 0)}>Home</button>
                 <button className="btn cta" onClick={() => window.scrollTo(0, document.querySelector('.about-section').offsetTop)}>About Me</button>
                 <button className="btn" onClick={() => window.scrollTo(0, document.querySelector('.projects-section').offsetTop)}>Projects</button>
-                <button className="btn" onClick={() => window.scrollTo(0, document.querySelector('.contact-section').offsetTop)}>Contact</button>
+                <button className="btn" onClick={() => window.scrollTo(0, document.querySelector('.social-medias').offsetTop)}>Contact</button>
                 <button onClick={toggleTheme} className="theme-button">Theme</button>
           </ul>
         </div>
@@ -43,7 +43,7 @@ const getIsNight = () => {
                 <button className="btn" onClick={() => window.scrollTo(0, 0)}>Home</button>
                 <button className="btn cta" onClick={() => window.scrollTo(0, document.querySelector('.about-section').offsetTop)}>About Me</button>
                 <button className="btn" onClick={() => window.scrollTo(0, document.querySelector('.projects-section').offsetTop)}>Projects</button>
-                <button className="btn" onClick={() => window.scrollTo(0, document.querySelector('.contact-section').offsetTop)}>Contact</button>
+                <button className="btn" onClick={() => window.scrollTo(0, document.querySelector('.social-medias').offsetTop)}>Contact</button>
                 <button onClick={toggleTheme} className="theme-button">
         {darkMode ? (
           <img
