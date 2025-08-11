@@ -35,12 +35,12 @@
 }
 
 .hero-section h1 {
-    font-size: 7rem;
+    font-size: 5rem;
     margin-bottom: 0px;
     color: #8e44ad;
     transition: all 0.3s ease;
-    font-family: "Bangers", system-ui;
-  font-weight: 900;
+    font-family: "Borel";
+  font-weight: 400;
   font-style: normal;
   letter-spacing: .5rem;
 }
